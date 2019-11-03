@@ -3,7 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BodkiaFitness.BL", "BodkiaFitness.BL\BodkiaFitness.BL.csproj", "{947E201E-C4C2-4E86-9114-F4071BCE609A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BodkiaFitnes.CMD", "BodkiaFitnes.CMD\BodkiaFitnes.CMD.csproj", "{3FDFE38E-256C-4135-8174-AD6AA63DBCFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BodkiaFitness.BLTests", "BodkiaFitness.BLTests\BodkiaFitness.BLTests.csproj", "{E3F87D59-124F-465E-BCB2-6E18F04AB0EE}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{947E201E-C4C2-4E86-9114-F4071BCE609A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{947E201E-C4C2-4E86-9114-F4071BCE609A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{947E201E-C4C2-4E86-9114-F4071BCE609A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{947E201E-C4C2-4E86-9114-F4071BCE609A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FDFE38E-256C-4135-8174-AD6AA63DBCFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FDFE38E-256C-4135-8174-AD6AA63DBCFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FDFE38E-256C-4135-8174-AD6AA63DBCFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FDFE38E-256C-4135-8174-AD6AA63DBCFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3F87D59-124F-465E-BCB2-6E18F04AB0EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3F87D59-124F-465E-BCB2-6E18F04AB0EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3F87D59-124F-465E-BCB2-6E18F04AB0EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3F87D59-124F-465E-BCB2-6E18F04AB0EE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
