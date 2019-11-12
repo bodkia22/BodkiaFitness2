@@ -18,7 +18,9 @@ namespace BodkiaFitnes.CMD
             var name = Console.ReadLine();
 
             var UserController = new UserController(name);
-            if(UserController.IsNewUser)
+            var EatingController = new EatingController(UserController.CurrentUser);
+
+            if (UserController.IsNewUser)
             {
                 Console.Write("Введите пол: ");
                 var gender = Console.ReadLine();
@@ -30,9 +32,40 @@ namespace BodkiaFitnes.CMD
             }
             Console.WriteLine(UserController.CurrentUser);
 
+            Console.WriteLine("Что вы хотите зделать ?");
+            Console.WriteLine("E - ввести прием пищи");
+            var key = Console.ReadKey();
+            Console.WriteLine();
+
+            if(key.Key==ConsoleKey.E)
+            {
+                var foods = EnterEating();
+                EatingController.Add(foods.food, foods.Weight);
+
+                foreach (var item in EatingController.Eating.Foods)
+                {
+                    Console.WriteLine($"{item.Key} - {item.Value}");
+                }
+            }
             Console.ReadLine();
         }
 
+        
+        private static (Food food, double Weight) EnterEating()
+        {
+            Console.Write("Введите имя продукта: ");
+            var food = Console.ReadLine();
+
+            var calories = ParseDouble("калорийность");
+            var protein = ParseDouble("белки");
+            var fats = ParseDouble("жири");
+            var carbs = ParseDouble("углеводы");
+
+            var weight = ParseDouble("вес порции");
+            var product = new Food(food,calories,protein,fats,carbs);
+
+            return (product,weight);
+        }
         private static DateTime ParseDateTime()
         {
             DateTime birth;

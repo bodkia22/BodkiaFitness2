@@ -10,8 +10,9 @@ namespace BodkiaFitness.BL.Controller
     /// <summary>
     /// Контроллер пользователя.
     /// </summary>
-    public class UserController
+    public class UserController : BaseController
     {
+        public const string USER_FILE_NAME = "user.dat";
         /// <summary>
         /// Пользователь приложения.
         /// </summary>
@@ -55,19 +56,7 @@ namespace BodkiaFitness.BL.Controller
         /// <returns></returns>
         private List<User> GetUsersData()
         {
-            var formatter = new BinaryFormatter();
-
-            using (var fs = new FileStream("user.dat", FileMode.OpenOrCreate))
-            {
-                if (fs.Length>0 && formatter.Deserialize(fs) is List<User> user)//без lenght на тесте была ошибка
-                {
-                    return user;
-                }
-                else
-                {
-                    return new List<User>();
-                }
-            }
+            return Load<List<User>>(USER_FILE_NAME) ?? new List<User>();
         }
 
         public void SetNewUserData(string gender,DateTime birth,double weight=1,double height=1)
@@ -85,11 +74,7 @@ namespace BodkiaFitness.BL.Controller
         /// </summary>
         public void Save()
         {
-            var formatter = new BinaryFormatter();
-            using (var fs=new FileStream("user.dat",FileMode.OpenOrCreate))
-            {
-                formatter.Serialize(fs, Users);
-            }
+            Save(USER_FILE_NAME, Users);
         }
     }
 }
